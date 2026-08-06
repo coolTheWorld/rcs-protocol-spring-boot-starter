@@ -4,6 +4,8 @@
 
 本仓库负责 Spring Boot 3 集成、MQTT 客户端配置以及进程内内存或 Redis 状态基础设施。协议模型、校验、状态机、协议消息生成、状态快照 Codec 和 Effect Codec 属于核心协议 jar，不得在 Starter 中重复实现。
 
+本文件是 `rcs-protocol-spec` 当前 Spec 的派生执行说明，不是独立事实来源。本文件与 Spec 冲突时必须以 Spec 为准并同步更正；Spec 更新了本文件中也存在的声明时，必须在同一工作周期更新本文件。不得在本文件中自行引入 Spec 未确认的项目决定。
+
 ## 运行时约束
 
 - 应用必须显式选择一个协议类型和一个角色；Fleet Control 与 Mobile Robot 不得在同一实例中同时启用。
