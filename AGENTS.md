@@ -6,6 +6,8 @@
 
 本文件是 `rcs-protocol-spec` 当前 Spec 的派生执行说明，不是独立事实来源。本文件与 Spec 冲突时必须以 Spec 为准并同步更正；Spec 更新了本文件中也存在的声明时，必须在同一工作周期更新本文件。不得在本文件中自行引入 Spec 未确认的项目决定。
 
+跨仓库命令、完成门槛、贡献和发布流程分别由 Spec 仓库的 `DEVELOPMENT.md`、`DEFINITION-OF-DONE.md`、`CONTRIBUTING.md` 与 `RELEASE.md` 统一维护。
+
 相关仓库地址：
 
 - Java 核心库：`https://github.com/coolTheWorld/rcs-protocol-java.git`
@@ -15,15 +17,15 @@
 ## 运行时约束
 
 - 应用必须显式选择一个协议类型和一个角色；Fleet Control 与 Mobile Robot 不得在同一实例中同时启用。
-- 状态存储必须显式选择 `memory` 或 `redis`。
-- `memory` 模式直接使用进程内状态，不限定为非生产环境。
-- `redis` 模式支持多实例共享；配置、连接或兼容性检查失败时必须启动失败，不得静默降级。
+- 状态存储必须显式选择 `IN_MEMORY` 或 `REDIS`。
+- `IN_MEMORY` 模式直接使用进程内状态，不限定为非生产环境。
+- `REDIS` 模式支持多实例共享；配置、连接或兼容性检查失败时必须启动失败，不得静默降级。
 - 不提供 JDBC 存储，不自动迁移不兼容快照。
 - Starter 不自动消费协议 Topic、反序列化业务消息或驱动核心状态机。
 
 ## 技术与文档规则
 
-- 首版使用 JDK 21、Maven、Spring Boot 3.5.x 和 Jackson 2。
+- 首版使用 JDK 21、Maven、Spring Boot 3.5.16 和 Jackson 2.21.4。
 - 新增说明文档、设计文档和仓库指南使用中文正文；代码标识符、配置键和正式技术术语可以保留原文。
 - Java 使用四空格缩进、全小写包名、`PascalCase` 类型和 `camelCase` 成员。
 - 测试放在 `src/test/java` 并镜像生产包，测试类命名为 `*Test`。
