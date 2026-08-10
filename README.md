@@ -12,7 +12,8 @@
 
 1. 阅读 [VDA 5050 Java 实现规格](https://github.com/coolTheWorld/rcs-protocol-spec/blob/main/vda5050-java-implementation.md)中的基础设施边界。
 2. 阅读 [Starter 相关 ADR](https://github.com/coolTheWorld/rcs-protocol-spec/tree/main/docs/adr)，重点关注显式存储模式、Spring Boot/Jackson 基线和应用层装配。
-3. 通过 `git status --short` 与 `rg --files` 检查当前设计仓库；在 Maven 工程建立前不要使用虚构的构建命令。
+3. 阅读 [Starter 实施计划](https://github.com/coolTheWorld/rcs-protocol-spec/blob/main/tasks/spring-boot-starter/plan.md)；该计划当前未激活，D01-D06 和维护者授权完成前不开始代码任务。
+4. 通过 `git status --short` 与 `rg --files` 检查当前设计仓库；在 Maven 工程建立前不要使用虚构的构建命令。
 
 ## 当前命令
 
@@ -39,6 +40,7 @@ rg --files
 - [项目开发规范](https://github.com/coolTheWorld/rcs-protocol-spec/blob/main/DEVELOPMENT.md)
 - [项目完成定义](https://github.com/coolTheWorld/rcs-protocol-spec/blob/main/DEFINITION-OF-DONE.md)
 - [发布门禁](https://github.com/coolTheWorld/rcs-protocol-spec/blob/main/RELEASE.md)
+- [Starter 计划、任务与进度](https://github.com/coolTheWorld/rcs-protocol-spec/tree/main/tasks/spring-boot-starter)
 - [本仓库贡献指南](./CONTRIBUTING.md)
 
 ## 许可证状态

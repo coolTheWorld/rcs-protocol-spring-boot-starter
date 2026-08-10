@@ -9,9 +9,11 @@
 - [项目开发规范](https://github.com/coolTheWorld/rcs-protocol-spec/blob/main/DEVELOPMENT.md)
 - [VDA 5050 Java 实现规格](https://github.com/coolTheWorld/rcs-protocol-spec/blob/main/vda5050-java-implementation.md)
 - [Starter 架构决策](https://github.com/coolTheWorld/rcs-protocol-spec/tree/main/docs/adr)
+- [Starter 实施计划](https://github.com/coolTheWorld/rcs-protocol-spec/blob/main/tasks/spring-boot-starter/plan.md)
+- [Starter 任务清单](https://github.com/coolTheWorld/rcs-protocol-spec/blob/main/tasks/spring-boot-starter/todo.md)
 - [完成定义](https://github.com/coolTheWorld/rcs-protocol-spec/blob/main/DEFINITION-OF-DONE.md)
 
-Spec 是项目决定的事实来源。本仓库 README 与 `AGENTS.md` 是派生说明，发现不一致时先更正 Spec，再同步受影响文档。
+Spec 是项目决定的事实来源。本仓库 README 与 `AGENTS.md` 是派生说明，发现不一致时先更正 Spec，再同步受影响文档。Starter 任务集当前只是已规划、未激活；除 D01-D06 文档决策外，任何代码任务仍需维护者单独授权。
 
 ## 当前可执行检查
 

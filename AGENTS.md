@@ -8,6 +8,8 @@
 
 跨仓库命令、完成门槛、贡献和发布流程分别由 Spec 仓库的 `DEVELOPMENT.md`、`DEFINITION-OF-DONE.md`、`CONTRIBUTING.md` 与 `RELEASE.md` 统一维护。
 
+Starter 的实施计划、任务和进度位于 Spec 仓库 `tasks/spring-boot-starter/`。该任务集当前已规划但未激活；D01-D06、核心制品发布和维护者明确授权完成前，不开始行为代码。
+
 相关仓库地址：
 
 - Java 核心库：`https://github.com/coolTheWorld/rcs-protocol-java.git`
