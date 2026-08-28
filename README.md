@@ -17,7 +17,7 @@
 
 ## 当前命令
 
-```powershell
+```shell
 git status --short
 rg --files
 ```
@@ -26,7 +26,7 @@ rg --files
 
 ## 计划架构
 
-未来仓库将分离协议无关 AutoConfigure 和协议适配 Starter。AutoConfigure 负责公共配置、生命周期、MQTT 与状态基础设施装配；具体协议 Starter 依赖对应核心 jar，并只做类型安全的边界连接。协议业务仍由核心库拥有。
+未来仓库按实现规格第 24、56 项采用两个 Maven 模块：`rcs-protocol-spring-boot-autoconfigure` 承载协议无关的公共配置、生命周期、MQTT 与状态基础设施装配；`rcs-protocol-spring-boot-starter` 只作为依赖入口，传递引入 autoconfigure 与全部正式支持的协议核心 jar。使用方只声明一个统一 Starter，不设立按协议拆分的专用 Starter；应用集成代码只做类型安全的边界连接，协议业务仍由核心库拥有。
 
 运行时必须显式选择状态存储模式：
 
@@ -45,4 +45,4 @@ rg --files
 
 ## 许可证状态
 
-项目根许可证尚未由维护者确认。当前设计文档不得被解释为已经获得某个开源许可证授权，也不得被解释为已经发布可用 Starter。
+本仓库采用 [Apache License 2.0](./LICENSE)。当前仍处于设计阶段，没有已发布的可用 Starter。

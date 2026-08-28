@@ -17,7 +17,7 @@ Spec 是项目决定的事实来源。本仓库 README 与 `AGENTS.md` 是派生
 
 ## 当前可执行检查
 
-```powershell
+```shell
 git status --short
 rg --files
 ```
@@ -31,11 +31,11 @@ rg --files
 - 应用必须显式选择一个协议类型、一个角色和一个状态存储模式。
 - `REDIS` 配置或连接失败时启动失败，不静默降级为 `IN_MEMORY`。
 - Starter 不自动消费业务 Topic、不自动驱动状态机，也不承诺跨 Redis、MQTT 与设备的 exactly-once。
-- 协议无关的 AutoConfigure 与协议适配 Starter 应保持模块边界，不把所有协议耦合进一个制品。
+- `autoconfigure` 与 `starter` 保持模块边界：基础设施 API 不绑定任何协议类型；统一 Starter 传递引入全部受支持协议核心，但一次只激活显式选择的 `(protocolType, role)`。
 
 ## 未来实现要求
 
-实现任务获批后，行为变更必须先写失败测试。至少覆盖：条件装配、配置绑定与失败消息、单角色约束、显式存储模式、Redis fail-fast、无隐式业务消费，以及核心库依赖边界。新增或修改的生产类以 100% 分支覆盖率为目标；确实无法覆盖的分支按 Spec 的[分支覆盖率目标与例外登记](https://github.com/coolTheWorld/rcs-protocol-spec/blob/main/docs/branch-coverage.md)逐项说明。公共配置键、Maven 坐标和持久化格式属于需要先确认的接口。
+实现任务获批后，行为变更必须先写失败测试。至少覆盖：条件装配、配置绑定与失败消息、单角色约束、显式存储模式、Redis fail-fast、无隐式业务消费，以及核心库依赖边界。评审新增或修改生产类的未覆盖分支（100% 为启发式，见 Spec 的[分支覆盖率指引](https://github.com/coolTheWorld/rcs-protocol-spec/blob/main/docs/branch-coverage.md)）；硬门禁 90%/85%。公共配置键、Maven 坐标和持久化格式属于需要先确认的接口。
 
 ## 提交与 Pull Request
 
@@ -43,4 +43,4 @@ rg --files
 
 ## 许可证状态
 
-项目根许可证尚未由维护者确认。在许可证和发布元数据完成前，不得把本仓库描述为已经获得某个开源许可证授权，也不得宣称存在可供生产使用的发布制品。
+本仓库采用 Apache-2.0（根目录 `LICENSE`）；提交贡献即表示同意按该许可证授权。当前仍没有可供生产使用的发布制品。
